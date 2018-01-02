@@ -1,0 +1,246 @@
+
+/*
+Written October 2017
+Akhil Aji
+*/
+*{
+  margin:0;
+  padding: 0;
+}
+
+body{
+  margin:0;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 17px;
+  color: white;
+  line-height: 1.6;
+
+}
+
+#imgSlider .slide{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: transparent;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: none;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 36s linear infinite 0s; 
+}
+
+/*
+Style the front landing page
+*/
+
+#showcase{
+  background-image:url('../images/background1.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+
+
+}
+#showcase h1{
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 75px;
+  color: white;
+
+
+
+}
+#showcase h2{
+  font-size: 20px;
+
+
+}
+#showcase h3{
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: white;
+
+
+}
+#showcase .buttonContainer{
+  display: inline-block;
+  color: white;
+
+
+
+}
+#showcase .button{
+  display: inline-block;
+  font-size: 18px;
+  text-decoration: none;
+  color: white;
+  border: 1px solid;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-top: 20px;
+
+
+}
+#showcase .button:hover{
+  color: black;
+}
+#social{
+  display: inline;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  padding: 30px 10px;
+
+}
+#social .button:hover{
+  text-decoration: none;
+  color: white;
+}
+
+/*
+Background Images for Paralax Effect
+*/
+.image{
+  background-image:url('../images/background1.jpg');
+  background-attachment: fixed;
+
+  height: 25vh;
+
+}
+#img1{
+  background-image:url('../images/background1.jpg') ;
+  background-attachment: fixed;
+  height: 25vh;
+}
+#img2{
+  background-image:url('../images/background2.jpg') ;
+  background-attachment: fixed;
+  height: 25vh;
+}
+#img3{
+  background-image:url('../images/background2.jpg') ;
+  background-attachment: fixed;
+  height: 25vh;
+}
+
+/*
+Style Upcoming Projects
+*/
+#section-UpcomingProjects{
+  padding:20px;
+  background:black;
+  color:#fff;
+  text-align:center;
+  height: 100vh;
+}
+
+/*
+Style Upcoming Projects
+*/
+#section-Contact{
+  padding:20px;
+  background:black;
+  color:#fff;
+  text-align:center;
+  height: 25vh;
+}
+
+/*
+Style Upcoming Projects
+*/
+#section-Projects{
+  padding:20px;
+  background:white;
+  color:#fff;
+  text-align:center;
+  height: 100vh;
+}
+#section-Projects p,h3{
+  color: Black
+}
+#section-Projects h3{
+  font-size: 25px;
+  font-weight: normal;
+  text-align: left;
+  padding-left: 2%;
+}
+#section-Projects h2{
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  color: black;
+  padding-bottom: 20px;
+}
+#section-Projects h4{
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 18
+
+  px;
+  color: black;
+  padding-bottom: 10px;
+}
+
+
+
+/*
+Style Upcoming Projects
+*/
+#section-About{
+  padding:20px;
+  background:white;
+  color:#fff;
+  text-align:center;
+  height: 35vh;
+}
+#section-About p,h3{
+  color: Black
+}
+#section-About h2{
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  color: black;
+  padding-bottom: 20px;
+}
+/*
+Style Upcoming Projects
+*/
+#soundcloudEmbedRight{
+  float: right;
+  width: 50%;
+
+}
+#soundcloudEmbedLeft{
+  float: left;
+  width: 50%;
+
+}
+
+
+#divider{
+  background-image: url('../images/banner1.jpg');
+  height: 25vh;
+  background-size:cover;
+  background-position: center;
+
+}
+
+footer{
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  padding-right: 30px;
+
+  color: black;
+
+}

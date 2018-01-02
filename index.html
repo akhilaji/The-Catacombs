@@ -1,0 +1,221 @@
+<!--Written October 2017 by Akhil Aji-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale =1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Link to CSS-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--Import Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="src/bufferloader.js"></script>
+    <script src="src/id3-minimized.js"></script>
+    <script src="src/audiovisualisierung.js"></script>
+
+
+    <title>The Catacombs</title>
+  </head>
+
+  <body>
+    <!--showcase class is used to display elements on landing page -->
+    <header   id = "showcase">
+      <h1>The Catacombs</h1>
+      <h2>Johar Samrao X Jonathan Zhao</h2>
+
+      <div class='buttonContainer'>
+          <a href="#section-Projects" class="button">Projects</a>
+          <a href="#section-UpcomingProjects" class="button">Upcoming</a>
+          <a href="#section-About" class="button">About Me</a>
+          <a href="#section-Contact" class="button">Contact</a>
+      </div>
+      <!--this takes the background image and cycles it-->
+      <script>
+      	var i = 0; // Start point
+      	var images = [];
+      	var time = 5000;
+        var existingImage = 'background1';
+        var existingImage = $('.showcase').css('background-image');
+
+      	// Image List
+      	images[0] = './images/background1.jpg';
+      	images[1] = './images/background2.jpg';
+      	images[2] = './images/background3.jpg';
+      	images[3] = './images/background4.jpg';
+
+      	// Change Image
+      	function changeImg(){
+      		document.slide.src = images[i];
+
+      		if(i < images.length - 1){
+            existingImage = existingImage.replace(images[2]);
+      			i++;
+      		} else {
+      			i = 0;
+      		}
+
+      		setTimeout("changeImg()", time);
+      	}
+
+      	window.onload = changeImg;
+
+      </script>
+
+
+
+
+      <section id="social">
+        <iframe allowtransparency="true" scrolling="no" frameborder="no" src="https://w.soundcloud.com/icon/?url=http%3A%2F%2Fsoundcloud.com%2Fthe_catacombs&color=white_transparent&size=64" style="width: 80px; height: 80px;"></iframe>
+        <iframe src="https://www.facebook.com/plugins/follow.php?href=https%3A%2F%2Fwww.facebook.com%2Fthecatacombsofficial%2F&width=78&height=65&layout=button&size=large&show_faces=true&appId" width="78" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+      </section>
+    </header>
+
+
+    <!--Section to showcase projects-->
+    <section id="section-Projects" class="content">
+      <h2>Projects</h2>
+      <h3>Just Released: Rain VIP</h3>
+        <audio id="player" controls src="https://soundcloud.com/the_catacombs/rain-vip">
+          <script type="text/javascript">
+            var player = document.getElementById("player");
+            player.setAttribute("crossOrigin", "anonymous");
+            var audioContext = new window.audioContext;
+            var analyzer = audioContext.createAnalyser();
+            analyzer.fftSize = 256;
+            var source = audioContext.createMediaElementSource(player);
+            source.connect(analyzer);
+            analyzer.connect(audioContext.destination);
+            audioData = new Uint8Array(128);
+            var volume = 0;
+            var sampleStream = function(){
+              analyzer.getByteFrequencyData(audioData);
+              var total = 0;
+                for (var i = 0; i < 80; i++) {
+                  total += audioData[i];
+                }
+              volume = total;
+              console.log(Math.floor(volume / 1000));
+            }
+            setInterval(sampleStream, 20);
+            var canvas = document.getElementById("vis"):
+            var context = canvas.getContext("2d");
+            var draw = function(){
+                for (bin = 0; bin < audioData.length; bin++) {
+                  var val = audioData[bin];
+                  var red = 0;
+                  var green = 255;
+                  var blue = 0;
+                  context.fillStyle = 'rgb('+red +', '+ green+',' +blue+')';
+                  context.fillRect(bin*8, 0,8,400);
+                }
+            }
+
+
+          </script>
+        </audio>
+
+
+        </div>
+      <iframe width="90%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/348446156&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
+      <h3>Other Releases.</h3>
+      <!--This section is for left hand soundcloud embeds-->
+      <section id="soundcloudEmbedLeft">
+        <iframe width="90%" height="40%" scrolling="no" frameborder="no"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/339539474&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
+        <h4>Alone - Original Mix Released 2017. This Project was focused on and explain more about the song here</h4>
+      </section>
+      <!--This section is for right hand soundcloud embeds-->
+      <section id="soundcloudEmbedRight">
+        <iframe width="90%" height="40%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/332557610&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
+        <h4>Heavy - Remix Released 2017. This Project was focused on and explain more about the song here</h4>
+      </section>
+
+    </section>
+
+
+    <div class="image" id="img1">
+        <img src="./images/background1.jpeg" alt="">
+    </div>
+
+
+    <!--Content for Upcoming Projects goes here-->
+    <section id="section-UpcomingProjects" class="content">
+      <h2>Upcoming Projects</h2>
+      <div class="albumart">
+
+      </div>
+      <h3>Soundcloud</h3>
+      <p>
+        Listen to some work in progress music before and submit feeback before release!
+          <p><a href="#">Google Form</a></p>
+      </p>
+    </section>
+
+
+    <div class="image" id="img2">
+        <img src="./images/background1.jpeg" alt="">
+    </div>
+
+
+    <!--Display Information about The Catacombs-->
+    <section id="section-About" class="content">
+      <h2>About Us</h2>
+      <p>
+        I am the one and only Johar Shamwow. I used to make memes for a living
+        but instead I decided to make some music instead.
+
+      </p>
+    </section>
+
+
+    <div class="image" id="img3">
+      <img src="./images/background1.jpeg" alt="">
+    </div>
+
+
+    <!--Display contact information-->
+    <section id="section-Contact" class="content">
+      <h2>Contact</h2>
+
+      <p>
+        Contact me for bookings:
+          <p><a href="https://www.soundcloud.com/the_catacombs">Link</a></p>
+
+      </p>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--Import Smooth Scrolling-->
+    <script>
+      $(document).ready(function(){
+      $('a[href*=#]').click(function() {
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+      && location.hostname == this.hostname) {
+        var $target = $(this.hash);
+        $target = $target.length && $target
+        || $('[name=' + this.hash.slice(1) +']');
+        if ($target.length) {
+          var targetOffset = $target.offset().top;
+          $('html,body')
+          .animate({scrollTop: targetOffset}, 1000);
+         return false;
+      }
+    }
+  });
+});
+
+    </script>
+  </body>
+
+
+
+
+  <!--Footer Content Goes Here-->
+  <footer>
+    <p>
+      2017 @ CatacombsMusic
+
+    </p>
+  </footer>
+
+</html>
