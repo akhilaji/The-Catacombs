@@ -1,11 +1,15 @@
 <!--Written October 2017 by Akhil Aji-->
+
+
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale =1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!--Link to CSS-->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+    <!--CSS Stylesheet-->
     <link rel="stylesheet" href="css/style.css">
     <!--Import Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
@@ -19,17 +23,33 @@
   </head>
 
   <body>
+    <!--Navigation Bar-->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse"> <i class="fa fa-bars"></i> </button>
+          <a class="navbar-brand page-scroll" href="#page-top"> <i class="fa fa-paper-plane-o"></i> The Catacombs</a> </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+          <ul class="nav navbar-nav">
+            <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+            <li class="hidden"> <a href="#page-top"></a> </li>
+            <li> <a class="page-scroll" href="#section-Projects">Projects</a> </li>
+            <li> <a class="page-scroll" href="#section-UpcomingProjects">Upcoming</a> </li>
+            <li> <a class="page-scroll" href="#section-About">About Us</a> </li>
+            <li> <a class="page-scroll" href="#section-Contact">Contact</a> </li>
+
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container -->
+    </nav>
     <!--showcase class is used to display elements on landing page -->
     <header   id = "showcase">
       <h1>The Catacombs</h1>
       <h2>Johar Samrao X Jonathan Zhao</h2>
-
-      <div class='buttonContainer'>
-          <a href="#section-Projects" class="button">Projects</a>
-          <a href="#section-UpcomingProjects" class="button">Upcoming</a>
-          <a href="#section-About" class="button">About Me</a>
-          <a href="#section-Contact" class="button">Contact</a>
-      </div>
       <!--this takes the background image and cycles it-->
       <script>
       	var i = 0; // Start point
@@ -76,44 +96,6 @@
     <section id="section-Projects" class="content">
       <h2>Projects</h2>
       <h3>Just Released: Rain VIP</h3>
-        <audio id="player" controls src="https://soundcloud.com/the_catacombs/rain-vip">
-          <script type="text/javascript">
-            var player = document.getElementById("player");
-            player.setAttribute("crossOrigin", "anonymous");
-            var audioContext = new window.audioContext;
-            var analyzer = audioContext.createAnalyser();
-            analyzer.fftSize = 256;
-            var source = audioContext.createMediaElementSource(player);
-            source.connect(analyzer);
-            analyzer.connect(audioContext.destination);
-            audioData = new Uint8Array(128);
-            var volume = 0;
-            var sampleStream = function(){
-              analyzer.getByteFrequencyData(audioData);
-              var total = 0;
-                for (var i = 0; i < 80; i++) {
-                  total += audioData[i];
-                }
-              volume = total;
-              console.log(Math.floor(volume / 1000));
-            }
-            setInterval(sampleStream, 20);
-            var canvas = document.getElementById("vis"):
-            var context = canvas.getContext("2d");
-            var draw = function(){
-                for (bin = 0; bin < audioData.length; bin++) {
-                  var val = audioData[bin];
-                  var red = 0;
-                  var green = 255;
-                  var blue = 0;
-                  context.fillStyle = 'rgb('+red +', '+ green+',' +blue+')';
-                  context.fillRect(bin*8, 0,8,400);
-                }
-            }
-
-
-          </script>
-        </audio>
 
 
         </div>
@@ -211,11 +193,10 @@
 
 
   <!--Footer Content Goes Here-->
-  <footer>
-    <p>
-      2017 @ CatacombsMusic
-
-    </p>
-  </footer>
+  <div id="footer">
+    <div class="container">
+      <p>Copyright &copy; The Catacombs Music / Designed by Akhil Aji </p>
+    </div>
+  </div>
 
 </html>
