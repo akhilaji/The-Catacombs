@@ -13,10 +13,6 @@
     <link rel="stylesheet" href="css/style.css">
     <!--Import Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="src/bufferloader.js"></script>
-    <script src="src/id3-minimized.js"></script>
-    <script src="src/audiovisualisierung.js"></script>
 
 
     <title>The Catacombs</title>
@@ -50,41 +46,6 @@
     <header   id = "showcase">
       <h1>The Catacombs</h1>
       <h2>Johar Samrao X Jonathan Zhao</h2>
-      <!--this takes the background image and cycles it-->
-      <script>
-      	var i = 0; // Start point
-      	var images = [];
-      	var time = 5000;
-        var existingImage = 'background1';
-        var existingImage = $('.showcase').css('background-image');
-
-      	// Image List
-      	images[0] = './images/background1.jpg';
-      	images[1] = './images/background2.jpg';
-      	images[2] = './images/background3.jpg';
-      	images[3] = './images/background4.jpg';
-
-      	// Change Image
-      	function changeImg(){
-      		document.slide.src = images[i];
-
-      		if(i < images.length - 1){
-            existingImage = existingImage.replace(images[2]);
-      			i++;
-      		} else {
-      			i = 0;
-      		}
-
-      		setTimeout("changeImg()", time);
-      	}
-
-      	window.onload = changeImg;
-
-      </script>
-
-
-
-
       <section id="social">
         <iframe allowtransparency="true" scrolling="no" frameborder="no" src="https://w.soundcloud.com/icon/?url=http%3A%2F%2Fsoundcloud.com%2Fthe_catacombs&color=white_transparent&size=64" style="width: 80px; height: 80px;"></iframe>
         <iframe src="https://www.facebook.com/plugins/follow.php?href=https%3A%2F%2Fwww.facebook.com%2Fthecatacombsofficial%2F&width=78&height=65&layout=button&size=large&show_faces=true&appId" width="78" height="65" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
@@ -192,7 +153,7 @@
 
 
 
-  <!--Footer Content Goes Here-->
+  <!--Footer-->
   <div id="footer">
     <div class="container">
       <p>Copyright &copy; The Catacombs Music / Designed by Akhil Aji </p>
