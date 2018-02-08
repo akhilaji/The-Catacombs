@@ -52,9 +52,8 @@
       </section>
     </header>
 
-
     <!--Section to showcase projects-->
-    <section id="section-Projects" class="content">
+    <div class="section-Projects">
       <h2>Our Music</h2>
       <div class="album-art">
         <div class="gallery">
@@ -90,41 +89,19 @@
         </div>
 
 
-      </div>
-
-
-
-
-
-
-
-
-
+        </div>
         </div>
 
-      <h3>Other Releases.</h3>
-      <!--This section is for left hand soundcloud embeds-->
-      <section id="soundcloudEmbedLeft">
-        <iframe width="90%" height="40%" scrolling="no" frameborder="no"
-        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/339539474&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
-        <h4>Alone - Original Mix Released 2017. This Project was focused on and explain more about the song here</h4>
-      </section>
-      <!--This section is for right hand soundcloud embeds-->
-      <section id="soundcloudEmbedRight">
-        <iframe width="90%" height="40%" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/332557610&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
-        <h4>Heavy - Remix Released 2017. This Project was focused on and explain more about the song here</h4>
-      </section>
 
-    </section>
+    </div>
 
-
+    <!--Divider Image-->
     <div class="image" id="img1">
         <img src="./images/background1.jpeg" alt="">
     </div>
 
-
     <!--Content for Upcoming Projects goes here-->
-    <section id="section-UpcomingProjects" class="content">
+    <div class="section-UpcomingProjects">
       <h2>Upcoming Projects</h2>
       <div class="albumart">
 
@@ -134,37 +111,40 @@
         Listen to some work in progress music before and submit feeback before release!
           <p><a href="#">Google Form</a></p>
       </p>
-    </section>
+    </div>
 
-
+    <!--Divider Image-->
     <div class="image" id="img2">
         <img src="./images/background1.jpeg" alt="">
     </div>
 
 
     <!--Display Information about The Catacombs-->
-    <section id="section-About" class="content">
-        <header>
+    <div class="section-About">
           <h2>About Us</h2>
+    <div class="section-About">
+      <div class="col-left">
+        <img src="./images/johar.jpg" alt="Johar" >
+      </div>
+      <div class="col-right">
+        <h4>Johar Samrao</h4>
+        <h5>@JoeTheSmolBoi</h5>
+        <p>Hi, my name is johar samrao. I am the resident meme of Almaden Valley.
+          I used to make music but now I really make music. Some of my music has been pretty LIT if you know what I mean. </p>
+      </div>
+    </div>
 
-        </header>
-
-
-          <section class="johar">
-            <img  src="./images/johar.jpg" alt="Johar" width="300" height="300" align = "left"/>
-            <h3 class="title">Johar Samrao</h3>
-            <p>I Am not liek mr big boi. They cal me JoeTheSmolBoi</p>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-          </section>
-          <section class="jon">
-            <img  src="./images/johar.jpg" alt="Not Johar" width="300" height="300" align = "left"/>
-            <h3 class="title">Jon</h3>
-            <p>Hi, I am Jon, I used to be smol. That is not that case anymore. Now u can call me @jonthebigboi</p>
-          </section>
-
-
-
-    </section>
+    <div class="section-About">
+      <div class="col-left">
+        <img src="./images/johar.jpg" alt="Johar" >
+      </div>
+      <div class="col-right">
+        <h4>Jon </h4>
+        <h5>@Jonthebigboi</h5>
+        <p>Hi, my name is not johar samrao. I not am the resident meme of Almaden Valley.
+          I used to make music and now I still do. Sadly, I have not made LIT music if you know what I mean. </p>
+      </div>
+    </div>
 
 
     <div class="image" id="img3">
@@ -173,7 +153,7 @@
 
 
     <!--Display contact information-->
-    <section id="section-Contact" class="content">
+    <div class="section-Contact">
       <h2>Contact</h2>
 
       <p>
@@ -181,28 +161,11 @@
           <p><a href="https://www.soundcloud.com/the_catacombs">Link</a></p>
 
       </p>
-    </section>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!--Import Smooth Scrolling-->
-    <script>
-      $(document).ready(function(){
-      $('a[href*=#]').click(function() {
-      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
-      && location.hostname == this.hostname) {
-        var $target = $(this.hash);
-        $target = $target.length && $target
-        || $('[name=' + this.hash.slice(1) +']');
-        if ($target.length) {
-          var targetOffset = $target.offset().top;
-          $('html,body')
-          .animate({scrollTop: targetOffset}, 1000);
-         return false;
-      }
-    }
-  });
-});
+    </div>
+    <section id="section-Contact" class="content">
 
-    </script>
+    </section>
+
   </body>
 
 
